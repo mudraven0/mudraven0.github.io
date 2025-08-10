@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Oswald', sans-serif;
+}
+
+body {
+    /* Remove global flex so sections stack naturally */
+    width: 100vw;
+    min-height: 100vh;
+    background: none;
+    padding-top: 100px; /* offset for fixed header height */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    z-index: 50;
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-list i {
+    color: white;
+    padding-right: 10px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+}
+
+section#hero {
+    text-align: center;
+    height: 90vh;
+    padding: 4rem 1rem 3rem;
+    background: url('barrel.jpg') center center / cover no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken; /* or multiply */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero img {
+    width: 50vw;
+    max-width: 450px;
+    padding-bottom: 50px;
+}
+
+#hero h1 {
+    color: white;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+section#about {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: black;
+    min-height: 400px; /* allow growth instead of clipping */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#about p {
+        padding: 20px;
+        max-width: 75%;
+        width: 100%;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0 auto;
+        overflow-wrap: break-word; /* modern wrapping */
+        word-wrap: break-word;      /* legacy support */
+        word-break: break-word;     /* ensures very long tokens wrap */
+        hyphens: auto;              /* allow hyphenation */
+        box-sizing: border-box;
+}
+
+#about p span {
+    color: seagreen;
+}
+
+section#pictures {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgb(18, 18, 18);
+    min-height: 400px; /* allow growth instead of clipping */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#pictures .image {
+    display: block;
+    width: 500px;
+    color: white;
+    margin: 10px;
+}
+
+#pictures .image img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+#pictures .image h5 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#pictures .image p {
+    font-size: 1.5rem;
+}
+
+section#contact {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    background: url('taps.jpg') center center / cover no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken; /* or multiply */
+    min-height: 400px; /* allow growth instead of clipping */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#contact h3 {
+    color: white;
+    font-size: 3rem;
+}
+
+#contact .p1 {
+    color: white;
+    font-size: 2rem;
+}
+
+#contact .p2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#contact .input {
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.input input {
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    background:rgb(18, 18, 18);
+    color: white;
+    font-size: 1.25rem;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+}
+
+.input input:focus {
+    border: 1px solid white;
+}
+
+.input .message {
+    width: 100%;
+    height: 125px;
+    border-radius: 20px;
+    background:rgb(18, 18, 18);
+    color: white;
+    font-size: 1.25rem;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+    #about p {
+        max-width: 100%;
+        font-size: 40px;
+        padding: 20px;
+    }
+    #pictures .image {
+    width: 450px;
+}
+}
+
+@media (max-width: 800px) {
+    #about p {
+        max-width: 100%;
+        font-size: 28px;
+        padding: 16px;
+    }
+    #pictures .image {
+    width: 350px;
+}
+}
+
+@media (max-width: 576px) {
+    .nav-list span {
+        font-size: 0;
+    }
+    
+    #hero h1 {
+    font-size: 3rem;
+    }
+    #about p {
+        font-size: 22px;
+        padding: 14px;
+    }
+    section#about {
+        padding: 1.5rem 0.75rem;
+        min-height: 0; /* let content define height fully on very small screens */
+    }
+}
