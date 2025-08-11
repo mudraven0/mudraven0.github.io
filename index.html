@@ -84,5 +84,38 @@
             <button type="submit">Submit</button>
         </form>
     </section>
+    
+        <!-- Auto-hide header script -->
+        <script>
+        (function() {
+            const header = document.querySelector('header');
+            if (!header) return;
+
+            let lastY = window.scrollY;
+            let ticking = false;
+            const threshold = 5; // pixels of movement before we react
+
+            function update() {
+                const currentY = window.scrollY;
+
+                // Hide when scrolling down past header height; show when scrolling up
+                if (currentY > lastY + threshold && currentY > header.offsetHeight) {
+                    header.classList.add('header--hidden');
+                } else if (currentY < lastY - threshold) {
+                    header.classList.remove('header--hidden');
+                }
+
+                lastY = currentY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }, { passive: true });
+        })();
+        </script>
 </body>
 </html>
