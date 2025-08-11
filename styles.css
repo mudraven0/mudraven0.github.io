@@ -26,6 +26,13 @@ header {
     align-items: center;
     background: black;
     z-index: 50;
+    transition: transform .3s ease; /* smooth slide */
+    will-change: transform;         /* hint for performance */
+}
+
+/* Hidden state for auto-hide header */
+.header--hidden {
+    transform: translateY(-100%);
 }
 
 .main-nav {
