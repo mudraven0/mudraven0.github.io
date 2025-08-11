@@ -185,12 +185,6 @@ section#contact {
     font-size: 2rem;
 }
 
-#contact .p2 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
 #contact .input {
     width: 100%;
     color: white;
@@ -285,3 +279,4 @@ section#contact {
         min-height: 0; /* let content define height fully on very small screens */
     }
 }
+
