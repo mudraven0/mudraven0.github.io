@@ -143,4 +143,8 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+    .login button {
+        border: 1px solid white;
+    }
 }
