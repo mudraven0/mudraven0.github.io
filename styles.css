@@ -1,282 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Oswald', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    /* Remove global flex so sections stack naturally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    height: 100vh;
     width: 100vw;
-    min-height: 100vh;
-    background: none;
-    padding-top: 100px; /* offset for fixed header height */
 }
 
-header {
+#bg-video {
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
     width: 100vw;
-    height: 100px;
-    border-bottom: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    z-index: 50;
-    transition: transform .3s ease; /* smooth slide */
-    will-change: transform;         /* hint for performance */
-}
-
-/* Hidden state for auto-hide header */
-.header--hidden {
-    transform: translateY(-100%);
-}
-
-.main-nav {
-    width: 100%;
-}
-
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-}
-
-.nav-list i {
-    color: white;
-    padding-right: 10px;
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: white;
-}
-
-section#hero {
-    text-align: center;
-    height: 90vh;
-    padding: 4rem 1rem 3rem;
-    background: url('barrel.jpg') center center / cover no-repeat;
-    background-color: rgba(0,0,0,0.5);
-    background-blend-mode: darken; /* or multiply */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#hero img {
-    width: 50vw;
-    max-width: 450px;
-    padding-bottom: 50px;
-}
-
-#hero h1 {
-    color: white;
-    font-size: 5rem;
-    text-transform: uppercase;
-}
-
-section#about {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem 1rem;
-    background: black;
-    min-height: 400px; /* allow growth instead of clipping */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-#about p {
-        padding: 20px;
-        max-width: 75%;
-        width: 100%;
-        color: white;
-        font-size: 50px;
-        font-weight: bold;
-        margin: 0 auto;
-        overflow-wrap: break-word; /* modern wrapping */
-        word-wrap: break-word;      /* legacy support */
-        word-break: break-word;     /* ensures very long tokens wrap */
-        hyphens: auto;              /* allow hyphenation */
-        box-sizing: border-box;
-}
-
-#about p span {
-    color: seagreen;
-}
-
-section#pictures {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem 1rem;
-    background: rgb(18, 18, 18);
-    min-height: 400px; /* allow growth instead of clipping */
-    box-sizing: border-box;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#pictures .image {
-    display: block;
-    width: 500px;
-    color: white;
-    margin: 10px;
-}
-
-#pictures .image img {
-    width: 100%;
-    aspect-ratio: 1;
+    height: 100vh;
     object-fit: cover;
-    display: block;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-bottom: 15px;
+    z-index: -1;
 }
 
-#pictures .image h5 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
+.login {
+    width: 500px;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border-radius: 45px;
 }
 
-#pictures .image p {
-    font-size: 1.5rem;
-}
-
-section#contact {
+.login h1 {
     width: 100%;
-    margin: 0 auto;
-    padding: 2rem 3rem;
-    background: url('taps.jpg') center center / cover no-repeat;
-    background-color: rgba(0,0,0,0.5);
-    background-blend-mode: darken; /* or multiply */
-    min-height: 400px; /* allow growth instead of clipping */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#contact h3 {
-    color: white;
+    text-align: center;
+    margin-bottom: 30px;
     font-size: 3rem;
 }
 
-#contact .p1 {
-    color: white;
-    font-size: 2rem;
+.login .input {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-#contact .input {
-    width: 100%;
-    color: white;
-    font-size: 1.5rem;
+.input label {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 15px;
 }
 
 .input input {
     width: 100%;
-    height: 35px;
-    border-radius: 20px;
-    background:rgb(18, 18, 18);
-    color: white;
-    font-size: 1.25rem;
-    padding-left: 15px;
+    height: 50px;
+    border-radius: 10px;
     border: none;
     outline: none;
+    font-size: 1.25rem;
+    padding-left: 10px;
+    color: white;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.203);
 }
 
-.input input:focus {
+.login input:hover {
     border: 1px solid white;
 }
 
-.input .message {
-    width: 100%;
-    height: 125px;
-    border-radius: 20px;
-    background:rgb(18, 18, 18);
-    color: white;
-    font-size: 1.25rem;
-    padding-left: 15px;
-    border: none;
-    outline: none;
-    text-align: left;
+.login input:focus {
+    background: white;
+    color: black;
 }
 
-#contact button {
+.login a {
+    display: block;
     width: 100%;
-    margin-top: 20px;
-    height: 35px;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    background-color: black;
-    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: rgb(54, 54, 204)
 }
 
-#contact button:hover {
+.login a:hover {
+    text-decoration: underline;
+}
+
+.login button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    color: white;
+    background: black;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.login button:hover {
     border: 1px solid white;
 }
 
-#contact button:active {
-    opacity: 0.9;
-    box-shadow: inset 0 0 0 2px white;
+.login button:active {
+    background: white;
+    color: black;
 }
 
-@media (max-width: 1200px) {
-    #about p {
-        max-width: 100%;
-        font-size: 40px;
-        padding: 20px;
-    }
-    #pictures .image {
-    width: 450px;
+.login p {
+    width: 100%;
+    text-align: center;
 }
+
+.login p a {
+    color: rgb(54, 54, 204);
+    display: inline;
+    text-decoration: none;
+    cursor: pointer;
 }
+
+.login p a:hover {
+    text-decoration: underline;
+}
+
 
 @media (max-width: 800px) {
-    #about p {
-        max-width: 100%;
-        font-size: 28px;
-        padding: 16px;
-    }
-    #pictures .image {
-    width: 350px;
-}
-}
-
-@media (max-width: 576px) {
-    .nav-list span {
-        font-size: 0;
-    }
     
-    #hero h1 {
-    font-size: 3rem;
-    }
-    #about p {
-        font-size: 22px;
-        padding: 14px;
-    }
-    section#about {
-        padding: 1.5rem 0.75rem;
-        min-height: 0; /* let content define height fully on very small screens */
+    .login {
+        border: none;
+        width: 100vw;
+        height: 100vh;
+        padding: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
-
