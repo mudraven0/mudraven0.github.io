@@ -127,8 +127,13 @@ body {
 }
 
 
-@media (max-width: 800px) {
-    
+@media (max-width: 576px) {
+    body {
+        background: black;
+    }
+    #bg-video {
+        display: none;
+    }
     .login {
         border: none;
         width: 100vw;
