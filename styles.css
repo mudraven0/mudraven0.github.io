@@ -142,8 +142,5 @@ button:hover {
     button {
         width: 20%;
     }
-
-    #hourly-forecast {
-        display: none;
-    }
 }
+
