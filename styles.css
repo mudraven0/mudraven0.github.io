@@ -3,6 +3,7 @@
 body {
     background: rgba(15, 24, 41, 1);
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,3 +118,4 @@ button:hover {
     padding: 0;
     }
 }
+
