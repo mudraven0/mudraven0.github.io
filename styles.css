@@ -101,7 +101,7 @@ button:hover {
     #weather-container {
         width: calc(100vw - 10px);
         max-width: auto;
-        height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
