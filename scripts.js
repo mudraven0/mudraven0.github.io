@@ -1,4 +1,5 @@
 document.getElementById("Stuff").textContent = getWeather();
+document.getElementById("Stuff").textContent += 'heres your weather nerd';
 
 function getWeather() {
     
@@ -32,7 +33,7 @@ function getWeather() {
         .catch(error => {
             console.error('Error fetching hourly forecast data:', error);
             alert('Error fetching hourly forecast data. Please try again.');
-        });  
+        });
 }
 
 function displayWeather(data) {
@@ -70,13 +71,25 @@ function displayWeather(data) {
         weatherIcon.alt = description;
 
         showImage();
+
+        if (temperature > 30) {
+            document.getElementById('weather-container').style.background = 'rgba(160, 39, 39, 1)'
+        } else if (temperature > 25) {
+            document.getElementById('weather-container').style.background = 'rgba(185, 115, 89, 1)'
+        } else if (temperature > 20) {
+            document.getElementById('weather-container').style.background = 'rgba(171, 168, 125, 1)'
+        } else if (temperature > 15) {
+            document.getElementById('weather-container').style.background = 'rgba(100, 141, 137, 1)'
+        } else if (temperature > 10) {
+            document.getElementById('weather-container').style.background = 'rgba(66, 129, 144, 1)' 
+        }
     }
 }
 
 function displayHourlyForecast(hourlyData) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
-    const next24Hours = hourlyData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
+    const next24Hours = hourlyData.slice(0, 4); // Display the next 24 hours (3-hour intervals)
 
     next24Hours.forEach(item => {
         const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
