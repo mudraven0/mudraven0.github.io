@@ -2,7 +2,7 @@
 
 body {
     background: rgba(15, 24, 41, 1);
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,12 +108,11 @@ button:hover {
         background: rgba(0, 0, 0, 0.7);
         border: none;
         box-shadow: none;
+        font-weight: bold;
     }
     body {
     background: #000000;
     font-family: 'Poppins', sans-serif;
-    font-size: large;
-    font-weight: 500;
     margin: 0;
     padding: 0;
     }
