@@ -1,5 +1,4 @@
 document.getElementById("Stuff").textContent = getWeather();
-document.getElementById("Stuff").textContent += 'heres your weather nerd';
 
 function getWeather() {
     
@@ -73,15 +72,15 @@ function displayWeather(data) {
         showImage();
 
         if (temperature > 30) {
-            document.getElementById('weather-container').style.background = 'rgba(160, 39, 39, 1)'
+            document.getElementById('weather-container').style.background = 'rgba(180, 38, 38, 1)'
         } else if (temperature > 25) {
-            document.getElementById('weather-container').style.background = 'rgba(185, 115, 89, 1)'
+            document.getElementById('weather-container').style.background = 'rgba(225, 148, 14, 1)'
         } else if (temperature > 20) {
-            document.getElementById('weather-container').style.background = 'rgba(171, 168, 125, 1)'
+            document.getElementById('weather-container').style.background = 'rgba(33, 204, 96, 1)'
         } else if (temperature > 15) {
-            document.getElementById('weather-container').style.background = 'rgba(100, 141, 137, 1)'
+            document.getElementById('weather-container').style.background = 'rgba(102, 202, 192, 1)'
         } else if (temperature > 10) {
-            document.getElementById('weather-container').style.background = 'rgba(66, 129, 144, 1)' 
+            document.getElementById('weather-container').style.background = 'rgba(59, 164, 190, 1)' 
         }
     }
 }
