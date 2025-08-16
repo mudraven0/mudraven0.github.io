@@ -1,9 +1,16 @@
 document.getElementById("Stuff").textContent = getWeather();
 
+ const myInput = document.getElementById('city-search');
+    myInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+        document.getElementById("Stuff").textContent = getWeather();
+    }
+    });
+
 function getWeather() {
     
     const apiKey = '3310582449c7245848bf8ceb811479fb';
-    const city = "Hamilton";
+    const city = document.getElementById('city-search').value;
 
     if (!city) {
         alert('Please enter a city');
@@ -50,6 +57,7 @@ function displayWeather(data) {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
     } else {
         const cityName = data.name;
+        const country = data.sys.country;
         const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
         const description = data.weather[0].description;
         const iconCode = data.weather[0].icon;
@@ -60,7 +68,7 @@ function displayWeather(data) {
         `;
 
         const weatherHtml = `
-            <p>${cityName}</p>
+            <p>${cityName} , ${country}</p>
             <p>${description}</p>
         `;
 
@@ -88,7 +96,7 @@ function displayWeather(data) {
 function displayHourlyForecast(hourlyData) {
     const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
-    const next24Hours = hourlyData.slice(0, 4); // Display the next 24 hours (3-hour intervals)
+    const next24Hours = hourlyData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
 
     next24Hours.forEach(item => {
         const dateTime = new Date(item.dt * 1000); // Convert timestamp to milliseconds
