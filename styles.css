@@ -31,20 +31,34 @@ input {
     width: calc(100% - 16px);
     box-sizing: border-box;
     border-radius: 10px;
-    border: 1px solid white;
+    border: none;
+    outline: none;
     margin-top: 20px;
+    height: 30px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+input:hover {
+    opacity: 0.8;
+}
+
+input:focus {
+    border: 1px solid white;
 }
 
 button {
     background: #49464a;
     color: white;
-    padding: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     margin-top: 20px;
-    width: 100%;
+    width: 40%;
+    height: 30px;
     font-size: 15px;
+    text-align: center;
 }
 
 button:hover {
@@ -106,6 +120,7 @@ button:hover {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
         background: rgba(0, 0, 0, 0.7);
         border: none;
         box-shadow: none;
@@ -117,5 +132,18 @@ button:hover {
     margin: 0;
     padding: 0;
     }
-}
 
+    input {
+        width: 40%;
+        height: 8%;
+        font-size: 1.3rem;
+    }
+
+    button {
+        width: 20%;
+    }
+
+    #hourly-forecast {
+        display: none;
+    }
+}
